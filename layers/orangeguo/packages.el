@@ -23,6 +23,7 @@
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
 ;;   function `orangeguo/init-PACKAGE' to load and initialize the package.
 
+
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
 ;;   define the functions `orangeguo/pre-init-PACKAGE' and/or
 ;;   `orangeguo/post-init-PACKAGE' to customize the package as it is loaded.
@@ -30,7 +31,9 @@
 ;;; Code:
 
 (defconst orangeguo-packages
-  '(youdao-dictionary)
+  '(youdao-dictionary
+    company)
+
   "The list of Lisp packages required by the orangeguo layer.
 
 Each entry is either:
@@ -67,4 +70,13 @@ Each entry is either:
     (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
     )
   )
+;; 定制 company-mode
+(defun orangeguo/post-init-company ()
+  (setq company-minimum-prefix-length 1)
+  )
 ;;; packages.el ends here
+
+
+
+
+
