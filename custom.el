@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(appt-audible t)
  '(appt-display-duration 30)
- '(appt-display-format (quote window))
+ '(appt-display-format (quote echo))
+ '(appt-display-interval 5)
  '(appt-display-mode-line t)
  '(appt-message-warning-time 15)
  '(package-selected-packages
