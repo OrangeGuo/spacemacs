@@ -45,6 +45,7 @@ Value of hour-string should be between 1 and 24(including)."
 then check whether emacs should to modify theme, if so, modify it."
   (let ((new-theme (orangeguo/get-themes-according (format-time-string "%H"))))
     (unless (eq new-theme spacemacs--cur-theme)
+      (message "hello")
       (spacemacs/load-theme new-theme)
     ))
   )
@@ -54,7 +55,7 @@ then check whether emacs should to modify theme, if so, modify it."
   (interactive)
   (orangeguo/check-time-and-modify-theme)
   (setq
-   orangeguo--interval-timer (run-at-time 3600 3600 'orangeguo/check-time-and-modify-theme))
+   orangeguo--interval-timer (run-at-time 5 900 'orangeguo/check-time-and-modify-theme))
   (message "themes auto change open.")
   )
 
