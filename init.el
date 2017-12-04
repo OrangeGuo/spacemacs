@@ -327,7 +327,7 @@ you should place your code here."
 
 
 
-(orangeguo/config-time-themes-table '(("8" . solarized-light) ("18" . monokai)))
+(orangeguo/config-time-themes-table '(("8" . solarized-light) ("17" . monokai)))
 
 (orangeguo/open-themes-auto-change)
 
