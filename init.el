@@ -326,7 +326,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((emacs-lisp . t)))
 
 (orangeguo/config-time-themes-table '(("8" . solarized-light) ("17" . monokai)))
 
