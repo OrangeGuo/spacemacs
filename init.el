@@ -325,6 +325,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
 
 (orangeguo/config-time-themes-table '(("8" . solarized-light) ("17" . monokai)))

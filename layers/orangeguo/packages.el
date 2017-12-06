@@ -32,7 +32,9 @@
 
 (defconst orangeguo-packages
   '(youdao-dictionary
-    company)
+    company
+    lispy)
+  
 
   "The list of Lisp packages required by the orangeguo layer.
 
@@ -74,6 +76,8 @@ Each entry is either:
 (defun orangeguo/post-init-company ()
   (setq company-minimum-prefix-length 1)
   )
+;; 定制 lispy
+(defun orangeguo/init-lispy ())
 ;;; packages.el ends here
 
 
