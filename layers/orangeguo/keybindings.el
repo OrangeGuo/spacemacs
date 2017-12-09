@@ -19,4 +19,5 @@
 	      (projectile-find-file)
       (ido-find-file))))
 
-(define-key evil-visual-state-map (kbd "C-r") 'orangeguo/evil-quick-replace)
+(define-key evil-visual-state-map (kbd "<f1>") 'orangeguo/evil-quick-replace-allbuffer)
+(define-key evil-visual-state-map (kbd "<f2>") 'orangeguo/evil-quick-replace-line)

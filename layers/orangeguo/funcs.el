@@ -107,12 +107,21 @@ then check whether emacs should to modify theme, if so, modify it."
         (insert output-string))
     output-string))
 ;; replace
-(defun orangeguo/evil-quick-replace (beg end)
+(defun orangeguo/evil-quick-replace-allbuffer (beg end)
   (interactive "r")
   (when (evil-visual-state-p)
     (evil-exit-visual-state)
     (let ((selection (regexp-quote (buffer-substring-no-properties beg end))))
       (setq command-string (format "%%s /%s//g" selection))
+      (minibuffer-with-setup-hook
+          (lambda () (backward-char 2))
+        (evil-ex command-string)))))
+(defun orangeguo/evil-quick-replace-line (beg end)
+  (interactive "r")
+  (when (evil-visual-state-p)
+    (evil-exit-visual-state)
+    (let ((selection (regexp-quote (buffer-substring-no-properties beg end))))
+      (setq command-string (format "s /%s//g" selection))
       (minibuffer-with-setup-hook
           (lambda () (backward-char 2))
         (evil-ex command-string)))))
