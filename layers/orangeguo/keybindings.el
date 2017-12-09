@@ -18,3 +18,5 @@
     (if (projectile-project-p)
 	      (projectile-find-file)
       (ido-find-file))))
+
+(define-key evil-visual-state-map (kbd "C-r") 'orangeguo/evil-quick-replace)
