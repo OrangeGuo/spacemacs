@@ -324,14 +324,17 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-  (org-babel-do-load-languages
-   'org-babel-load-languages '((emacs-lisp . t)))
 
 (orangeguo/config-time-themes-table '(("8" . solarized-light) ("17" . monokai)))
 
 (orangeguo/open-themes-auto-change)
-
+(require 'pyim)
+(require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+(pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
+(setq default-input-method "pyim")
+(global-set-key (kbd "C-\\") 'toggle-input-method)
+(setq pyim-page-tooltip 'popup)
+(setq pyim-page-tooltip 'child-frame)
 (setq powerline-default-separator 'arrow)
 (org-agenda-to-appt t)
 (evilified-state-evilify-map occur-mode-map

@@ -125,3 +125,8 @@ then check whether emacs should to modify theme, if so, modify it."
       (minibuffer-with-setup-hook
           (lambda () (backward-char 2))
         (evil-ex command-string)))))
+
+(add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
+;; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages '((emacs-lisp . t)))
