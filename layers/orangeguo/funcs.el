@@ -125,8 +125,44 @@ then check whether emacs should to modify theme, if so, modify it."
       (minibuffer-with-setup-hook
           (lambda () (backward-char 2))
         (evil-ex command-string)))))
-
+;; auto indent in org-mode
 (add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
+
+;; auto enable lispy-mode 
 ;; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 ;; (org-babel-do-load-languages
 ;;  'org-babel-load-languages '((emacs-lisp . t)))
+
+;;set auto complete for english writing
+;; (require 'company)
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Don't enable company-mode in below major modes, OPTIONAL
+(setq company-global-modes '(not eshell-mode comint-mode erc-mode rcirc-mode))
+
+;; "text-mode" is a major mode for editing files of text in a human language"
+;; most major modes for non-programmers inherit from text-mode
+(defun text-mode-hook-setup ()
+  ;; make `company-backends' local is critcal
+  ;; or else, you will have completion in every major mode, that's very annoying!
+  (make-local-variable 'company-backends)
+
+  ;; company-ispell is the plugin to complete words
+  (add-to-list 'company-backends 'company-ispell)
+
+  ;; OPTIONAL, if `company-ispell-dictionary' is nil, `ispell-complete-word-dict' is used
+  ;;  but I prefer hard code the dictionary path. That's more portable.
+  (setq company-ispell-dictionary (file-truename "~/.spacemacs.d/dict/english-words.txt")))
+
+(add-hook 'text-mode-hook 'text-mode-hook-setup)
+
+(defun toggle-company-ispell ()
+  (interactive)
+  (cond
+   ((memq 'company-ispell company-backends)
+    (setq company-backends (delete 'company-ispell company-backends))
+    (message "company-ispell disabled"))
+   (t
+    (add-to-list 'company-backends 'company-ispell)
+    (message "company-ispell enabled!"))))
