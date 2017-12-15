@@ -21,3 +21,5 @@
 
 (define-key evil-visual-state-map (kbd "<f1>") 'orangeguo/evil-quick-replace-allbuffer)
 (define-key evil-visual-state-map (kbd "<f2>") 'orangeguo/evil-quick-replace-line)
+;; 定义快捷键
+(global-set-key (kbd "M-s o") 'occur-dwim)
