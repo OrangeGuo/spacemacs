@@ -34,7 +34,7 @@
   '(youdao-dictionary
     company
     pyim
-    company-dict
+;;    company-dict
     lispy)
   
 
@@ -124,7 +124,7 @@ Each entry is either:
    ("C-;" . pyim-delete-word-from-personal-buffer)))
   )
 ;;配置英文单词补全
-(defun orangeguo/init-company-dict ())
+;;(defun orangeguo/init-company-dict ())
 ;;; packages.el ends here
 ;;(require 'company-dict)
 
