@@ -133,8 +133,8 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(;;spacemacs-dark
                          ;;spacemacs-light
-                         monokai
                          solarized-light
+                         monokai
                          ;;leuven
                          ;;zenburn
                          ;;solarized-dark
@@ -337,6 +337,7 @@ you should place your code here."
 (setq pyim-page-tooltip 'child-frame)
 (setq powerline-default-separator 'arrow)
 (org-agenda-to-appt t)
+(hybrid-mode t)
 (evilified-state-evilify-map occur-mode-map
    :mode occur-mode)
   )
