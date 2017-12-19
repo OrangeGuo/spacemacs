@@ -133,8 +133,8 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(;;spacemacs-dark
                          ;;spacemacs-light
-                         monokai
                          solarized-light
+                         monokai
                          ;;leuven
                          ;;zenburn
                          ;;solarized-dark
@@ -144,7 +144,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
+                               :size 20 
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -337,6 +337,7 @@ you should place your code here."
 (setq pyim-page-tooltip 'child-frame)
 (setq powerline-default-separator 'arrow)
 (org-agenda-to-appt t)
+(hybrid-mode t)
 (evilified-state-evilify-map occur-mode-map
    :mode occur-mode)
   )
