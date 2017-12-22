@@ -137,7 +137,7 @@ then check whether emacs should to modify theme, if so, modify it."
 
 ;;set auto complete for english writing
 ;; (require 'company)
-
+(add-hook 'after-init-hook 'hybrid-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Don't enable company-mode in below major modes, OPTIONAL

@@ -325,7 +325,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
 (orangeguo/config-time-themes-table '(("8" . solarized-light) ("17" . monokai)))
 
 (orangeguo/open-themes-auto-change)
@@ -338,7 +337,6 @@ you should place your code here."
 (setq pyim-page-tooltip 'child-frame)
 (setq powerline-default-separator 'arrow)
 (org-agenda-to-appt t)
-(hybrid-mode t)
 (evilified-state-evilify-map occur-mode-map
    :mode occur-mode)
   )
