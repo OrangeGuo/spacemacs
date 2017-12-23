@@ -205,12 +205,6 @@ then check whether emacs should to modify theme, if so, modify it."
           ("s" "Code Snippet" entry
            (file org-agenda-file-code-snippet)
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-          ;;("w" "work" entry (file+headline org-agenda-file-gtd "Cocos2D-X")
-          ;; "* TODO [#A] %?\n  %i\n %U"
-           ;;:empty-lines 1)
-          ;;("c" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
-           ;;"* TODO [#C] %?\n %(orangeguo/retrieve-chrome-current-tab-url)\n %i\n %U"
-           ;;:empty-lines 1)
           ("l" "links" entry (file+headline org-agenda-file-note "Quick notes")
            "* TODO [#C] %?\n  %i\n %a \n %U"
            :empty-lines 1)
@@ -235,21 +229,5 @@ then check whether emacs should to modify theme, if so, modify it."
            ((stuck "") ;; review stuck projects as designated by org-stuck-projects
             (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
             ))))
-;; org-mode function
-(defun orangeguo/retrieve-chrome-current-tab-url()
-  "Get the URL of the active tab of the first window"
-  (interactive)
-  (let ((result (do-applescript
-                 (concat
-                  "set frontmostApplication to path to frontmost application\n"
-                  "tell application \"Google Chrome\"\n"
-                  "	set theUrl to get URL of active tab of first window\n"
-                  "	set theResult to (get theUrl) \n"
-                  "end tell\n"
-                  "activate application (frontmostApplication as text)\n"
-                  "set links to {}\n"
-                  "copy theResult to the end of links\n"
-                  "return links as string\n"))))
-    (format "%s" (s-chop-suffix "\"" (s-chop-prefix "\"" result)))))
 
 
