@@ -139,6 +139,7 @@ then check whether emacs should to modify theme, if so, modify it."
 ;; (require 'company)
 (add-hook 'after-init-hook 'hybrid-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'company-mode-hook (lambda () (setq company-minimum-prefix-length 1)))
 
 ;; Don't enable company-mode in below major modes, OPTIONAL
 (setq company-global-modes '(not eshell-mode comint-mode erc-mode rcirc-mode))
