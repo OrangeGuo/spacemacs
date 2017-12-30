@@ -324,7 +324,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-(orangeguo/config-time-themes-table '(("8" . spacemacs-light) ("15" . monokai)))
+(orangeguo/config-time-themes-table '(("8" . spacemacs-light) ("15" . spacemacs-dark)))
 
 (orangeguo/open-themes-auto-change) 
 
