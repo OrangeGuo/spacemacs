@@ -312,12 +312,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-(setq configuration-layer--elpa-archives
-      '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-	("org-cn"   . "http://elpa.zilongshanren.com/org/")
-	("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+  (setq configuration-layer-elpa-archives
+      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   )
-
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -325,9 +324,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-(orangeguo/config-time-themes-table '(("8" . spacemacs-light) ("16" . monokai)))
+(orangeguo/config-time-themes-table '(("8" . spacemacs-light) ("15" . monokai)))
 
-(orangeguo/open-themes-auto-change)
+(orangeguo/open-themes-auto-change) 
+
 (require 'pyim)
 (require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
 (pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
