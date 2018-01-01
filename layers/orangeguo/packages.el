@@ -34,6 +34,7 @@
   '(youdao-dictionary
     company
     pyim
+    cnfonts
 ;;    company-dict
     lispy)
   
@@ -80,6 +81,7 @@ Each entry is either:
   )
 ;; 定制 lispy
 (defun orangeguo/init-lispy ())
+(defun orangeguo/init-cnfonts())
 ;; 配置 pyim
 (defun orangeguo/init-pyim()
   (use-package pyim
@@ -123,21 +125,6 @@ Each entry is either:
   (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ("C-;" . pyim-delete-word-from-personal-buffer)))
   )
-;;配置英文单词补全
-;;(defun orangeguo/init-company-dict ())
-;;; packages.el ends here
-;;(require 'company-dict)
-
-;; Where to look for dictionary files. Default is ~/.emacs.d/dict
-;;(setq company-dict-dir (concat "~/.spacemacs.d/" "dict/"))
-
-;; Optional: if you want it available everywhere
-;;(add-to-list 'company-backends 'company-dict)
-
-;; Optional: evil-mode users may prefer binding this to C-x C-k for vim
-;; omni-completion-like dictionary completion
-;;(define-key evil-insert-state-map (kbd "C-x C-k") 'company-dict)
-
 
 
 
