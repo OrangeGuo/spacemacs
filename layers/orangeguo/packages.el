@@ -35,6 +35,7 @@
     company
     pyim
     cnfonts
+    org-octopress
 ;;    company-dict
     lispy)
   
@@ -82,6 +83,7 @@ Each entry is either:
 ;; 定制 lispy
 (defun orangeguo/init-lispy ())
 (defun orangeguo/init-cnfonts())
+(defun orangeguo/init-org-octopress ())
 ;; 配置 pyim
 (defun orangeguo/init-pyim()
   (use-package pyim
