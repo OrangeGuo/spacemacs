@@ -231,4 +231,25 @@ then check whether emacs should to modify theme, if so, modify it."
             (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
             ))))
 
-
+;; adjust my English and Chinese font for table align
+(set-face-attribute
+ 'default nil
+ :font (font-spec :name "-adbe-source code pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
+                  :weight 'normal
+                  :slant 'normal
+                  :size 18)) 
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+  (set-fontset-font
+   (frame-parameter nil 'font)
+   charset
+   (font-spec :name "-zyec-nsimsun-normal-normal-normal-*-*-*-*-*-d-0-iso10646-1"
+              :weight 'normal
+              :slant 'normal
+              :size 16.5)))
+;;config for my blog
+(require 'org-octopress)
+(setq org-octopress-directory-top       "~/blog/source")
+(setq org-octopress-directory-posts     "~/blog/source/_posts")
+(setq org-octopress-directory-org-top   "~/blog/source")
+(setq org-octopress-directory-org-posts "~/blog/source/blog")
+(setq org-octopress-setup-file          "~/blog/setupfile.org")
