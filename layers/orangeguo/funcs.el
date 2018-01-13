@@ -139,7 +139,7 @@ then check whether emacs should to modify theme, if so, modify it."
 ;; (require 'company)
 (add-hook 'after-init-hook 'hybrid-mode)
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'company-mode-hook (lambda () (setq company-minimum-prefix-length 1)))
+(add-hook 'company-mode-hook (lambda () (setq company-minimum-prefix-length 3)))
 
 ;; Don't enable company-mode in below major modes, OPTIONAL
 (setq company-global-modes '(not eshell-mode comint-mode erc-mode rcirc-mode))
@@ -190,6 +190,18 @@ then check whether emacs should to modify theme, if so, modify it."
   ;; the %i would copy the selected text into the template
   ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
   ;;add multi-file journal
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "NEXT(n)" "OFTEN(o)"  "WAIT(w@/!)" "LAST(l@/!)" "|" "CANC(c)"  "DONE(d)"))))
+
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("OFTEN":foreground "yellow" :weight bold)
+              ("WAIT" :foreground "orange" :weight bold)
+              ("LAST" :foreground "magenta" :weight bold)
+              ("CANC" :foreground "gray" :weight bold)
+              )))
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline org-agenda-file-gtd "study")
            "* TODO [#B] %?\n  %i\n"
