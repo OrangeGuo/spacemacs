@@ -230,17 +230,13 @@ then check whether emacs should to modify theme, if so, modify it."
   ;;So when create new task, they are default 重要且紧急
   (setq org-agenda-custom-commands
         '(
-          ("w" . "任务安排")
+          ("w" . "task view")
           ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
           ("wb" "重要且不紧急的任务" tags-todo "-Weekly-Monthly-Daily+PRIORITY=\"B\"")
           ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
-          ("b" "Blog" tags-todo "BLOG")
-          ("p" . "项目安排")
-          ("pw" tags-todo "PROJECT+WORK+CATEGORY=\"cocos2d-x\"")
-          ("pl" tags-todo "PROJECT+DREAM+CATEGORY=\"zilongshanren\"")
-          ("W" "Weekly Review"
+          ("r" "Weekly Review"
            ((stuck "") ;; review stuck projects as designated by org-stuck-projects
-            (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
+            (tags-todo "life") ;; review all projects (assuming you use todo keywords to designate projects)
             ))))
 
 ;; adjust my English and Chinese font for table align
