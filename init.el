@@ -335,6 +335,8 @@ you should place your code here."
 
 (orangeguo/open-themes-auto-change) 
 
+(setq org-export-with-toc nil)
+(setq org-export-with-section-numbers nil)
 (require 'pyim)
 (require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
 (pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
