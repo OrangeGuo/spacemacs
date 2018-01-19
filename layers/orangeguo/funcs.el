@@ -191,7 +191,7 @@ then check whether emacs should to modify theme, if so, modify it."
   ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
   ;;add multi-file journal
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "OFTEN(o)"  "WAIT(w@/!)" "LAST(l@/!)" "|" "CANC(c)"  "DONE(d)"))))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "OFTEN(o)"  "WAIT(w@/!)" "LAST(l)" "|" "CANC(c@/!)"  "DONE(d)"))))
 
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
