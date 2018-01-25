@@ -31,8 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
-     javascript
+;;     python
+;;     javascript
      ivy
      orangeguo
      ;; ----------------------------------------------------------------
@@ -47,12 +47,12 @@ values."
      git
      markdown
      org
-     html
+  ;;   html
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
-     syntax-checking
+    ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -346,8 +346,8 @@ you should place your code here."
 (setq pyim-page-tooltip 'child-frame)
 (setq powerline-default-separator 'arrow)
 (org-agenda-to-appt t)
-(evilified-state-evilify-map occur-mode-map
-   :mode occur-mode)
+;;(evilified-state-evilify-map occur-mode-map
+  ;; :mode occur-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
