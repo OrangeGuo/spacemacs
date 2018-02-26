@@ -30,8 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-;;     python
+   '(html
+     ;;     python
 ;;     javascript
      ivy
      orangeguo
@@ -47,7 +47,7 @@ values."
      git
      markdown
      org
-  ;;   html
+     html
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
