@@ -344,10 +344,10 @@ you should place your code here."
 (global-set-key (kbd "C-\\") 'toggle-input-method)
 (setq pyim-page-tooltip 'popup)
 (setq pyim-page-tooltip 'child-frame)
-(setq powerline-default-separator 'arrow)
-(org-agenda-to-appt t)
-;;(evilified-state-evilify-map occur-mode-map
-  ;; :mode occur-mode)
+;;(setq powerline-default-separator 'arrow)
+;;(org-agenda-to-appt t)
+(evilified-state-evilify-map occur-mode-map
+   :mode occur-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
