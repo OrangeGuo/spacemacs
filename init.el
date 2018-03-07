@@ -32,8 +32,9 @@ values."
    dotspacemacs-configuration-layers
    '(html
      ;;     python
-;;     javascript
+     ;;     javascript
      ivy
+     treemacs
      orangeguo
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -48,18 +49,19 @@ values."
      markdown
      org
      html
+;;     lsp
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
-    ;; syntax-checking
+     ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(posframe)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -106,7 +108,7 @@ values."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'hybird 
+   dotspacemacs-editing-style 'hybird
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -145,7 +147,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18 
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -271,7 +273,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t 
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -333,7 +335,7 @@ you should place your code here."
 (setq org-octopress-setup-file          "~/blog/setupfile.org")
 (orangeguo/config-time-themes-table '(("8" . spacemacs-light) ("15" . spacemacs-dark)))
 
-(orangeguo/open-themes-auto-change) 
+(orangeguo/open-themes-auto-change)
 
 (setq org-export-with-toc nil)
 (setq org-export-with-section-numbers nil)
@@ -343,11 +345,12 @@ you should place your code here."
 (setq default-input-method "pyim")
 (global-set-key (kbd "C-\\") 'toggle-input-method)
 (setq pyim-page-tooltip 'popup)
-(setq pyim-page-tooltip 'child-frame)
+;;(setq pyim-page-tooltip 'child-frame)
 ;;(setq powerline-default-separator 'arrow)
 ;;(org-agenda-to-appt t)
 (evilified-state-evilify-map occur-mode-map
    :mode occur-mode)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

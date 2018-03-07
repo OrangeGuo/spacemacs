@@ -101,15 +101,15 @@ Each entry is either:
   ;; 1. 光标只有在注释里面时，才可以输入中文。
   ;; 2. 光标前是汉字字符时，才能输入中文。
   ;; 3. 使用 M-j 快捷键，强制将光标前的拼音字符串转换为中文。
-  (setq-default pyim-english-input-switch-functions
-                '(pyim-probe-dynamic-english
-                  pyim-probe-isearch-mode
-                  pyim-probe-program-mode
-                  pyim-probe-org-structure-template))
-
-  (setq-default pyim-punctuation-half-width-functions
-                '(pyim-probe-punctuation-line-beginning
-                  pyim-probe-punctuation-after-punctuation))
+;;  (setq-default pyim-english-input-switch-functions
+;;                '(pyim-probe-dynamic-english
+;;                 pyim-probe-isearch-mode
+;;                  pyim-probe-program-mode
+;;                  pyim-probe-org-structure-template))
+;;
+ ;; (setq-default pyim-punctuation-half-width-functions
+  ;;              '(pyim-probe-punctuation-line-beginning
+   ;;               pyim-probe-punctuation-after-punctuation))
 
   ;; 开启拼音搜索功能
 ;;  (pyim-isearch-mode nil)
@@ -121,8 +121,10 @@ Each entry is either:
   (setq pyim-page-length 9)
 
   ;; 让 Emacs 启动时自动加载 pyim 词库
-  (add-hook 'emacs-startup-hook
-            #'(lambda () (pyim-restart-1 t)))
+;;  (add-hook 'emacs-startup-hook
+ ;;           #'(lambda () (pyim-restart-1 t)))
+  (add-hook 'org-mode-hook
+             #'(lambda () (pyim-restart-1 t)))
   :bind
   (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ("C-;" . pyim-delete-word-from-personal-buffer)))
